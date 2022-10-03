@@ -1,10 +1,12 @@
 const imageForm = document.querySelector("#imageForm");
 const imageInput = document.querySelector("#imageInput");
+
 const bucketUrl = document.getElementById("bucketUrl")
 
 imageForm.addEventListener("submit", async event => {
     event.preventDefault()
     const file = imageInput.files[0]
+
     const url = bucketUrl.value;
     // get secure url from our server
 
@@ -15,7 +17,6 @@ imageForm.addEventListener("submit", async event => {
         method: "PUT",
         headers: {
             "Content-Type": "multipart/form-data",
-
             "Access-Control-Allow-Origin": "*"
         },
         body: file
