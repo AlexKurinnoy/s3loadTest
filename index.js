@@ -14,7 +14,9 @@ imageForm.addEventListener("submit", async event => {
     await fetch(url, {
         method: "PUT",
         headers: {
-            "Content-Type": "multipart/form-data"
+            "Content-Type": "multipart/form-data",
+
+            "Access-Control-Allow-Origin": "*"
         },
         body: file
     })
